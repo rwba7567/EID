@@ -1,20 +1,16 @@
-const endpoint = 'https://rwba7567.github.io/EID/';
+const url = "http://172.20.10.6";
 
-const updateButtonStatus = (status) => {
-  const button = document.querySelector('#table3-1');
-  button.style.backgroundColor = status === 'On' ? 'green' : 'red';
-};
+function checkButtonStatus() {
+  fetch(url)
+    .then((response) => response.text())
+    .then((data) => {
+      console.log(data);
+      setTimeout(checkButtonStatus, 1000); // check again in 1 second
+    })
+    .catch((error) => {
+      console.log(error);
+      setTimeout(checkButtonStatus, 1000); // check again in 1 second
+    });
+}
 
-fetch(endpoint)
-  .then(response => {
-  console.log(response)
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
-  })
-  .then(data => {
-    updateButtonStatus(data.status);
-  })
-  .catch(error => {
-});
+checkButtonStatus();

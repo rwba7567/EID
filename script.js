@@ -1,7 +1,7 @@
 const endpoint = 'https://rwba7567.github.io/EID/';
 
 const updateButtonStatus = (status) => {
-  const button = document.querySelector('#table1-3');
+  const button = document.querySelector('#button');
   button.style.backgroundColor = status === 'On' ? 'green' : 'red';
 };
 
@@ -16,5 +16,4 @@ fetch(endpoint)
     updateButtonStatus(data.status);
   })
   .catch(error => {
-    console.error('There was a problem with the fetch operation:', error);
-  });
+});

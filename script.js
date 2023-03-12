@@ -1,4 +1,4 @@
-const url = "http://172.20.10.6";
+const url = "172.20.10.6";
 
 function checkButtonStatus() {
   fetch(url)

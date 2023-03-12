@@ -1,9 +1,9 @@
-fetch('/buttonStatus')
+fetch('https://rwba7567.github.io/EID/')
   .then(response => response.json())
   .then(data => {
-    // do something with the received data
     console.log(data);
+    // Use data to update your website here
   })
   .catch(error => {
-    console.error(error);
+    console.error('Error:', error);
   });

@@ -115,3 +115,7 @@ td {
 .test{
     border:5px solid black;
 }
+
+.red{
+    background-color: red;
+}
